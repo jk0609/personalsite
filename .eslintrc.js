@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   rules: {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": ["error", { singleQuote: true }],
     "arrow-body-style": [1, "as-needed"],
     "class-methods-use-this": 0,
     "import/imports-first": 0,
@@ -48,6 +48,7 @@ module.exports = {
     "no-use-before-define": 0,
     "prefer-destructuring": 1,
     "prefer-template": 2,
+    quotes: [1, "single", { avoidEscape: true }],
     "react/jsx-closing-tag-location": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,

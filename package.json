@@ -6,15 +6,16 @@
     "animejs": "^3.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.8",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx}' --fix",
+    "lint": "eslint src/**/*.{js,jsx} --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
   },
   "eslintConfig": {
