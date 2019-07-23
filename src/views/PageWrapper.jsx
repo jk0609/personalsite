@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Masthead from './components/Masthead';
 import Footer from './components/Footer';
 import App from '../App';
-import Contact from '../views/Contact';
 import AboutMe from '../views/AboutMe';
+import Portfolio from '../views/Portfolio';
 
 const PageWrapper = props => (
   <>
@@ -14,8 +14,8 @@ const PageWrapper = props => (
       <Masthead />
       <div>
         <Route exact path="/" component={App} />
+        <Route path="/portfolio" component={Portfolio} />
         <Route path="/about" component={AboutMe} />
-        <Route path="/contact" component={Contact} />
       </div>
       {React.Children.toArray(props.children)}
       <Footer />

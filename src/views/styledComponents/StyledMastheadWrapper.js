@@ -7,10 +7,12 @@ export default styled.div`
     border-bottom: 1.5px solid transparent;
     transition: border-color 0.5s linear;
     font-size: 16px;
+    text-decoration: none;
+    color: #fff;
 
     :hover {
       cursor: pointer;
-      border-color: black;
+      border-color: #fff;
     }
   }
 `;

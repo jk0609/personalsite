@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  border-top: 1px solid grey;
   height: 3em;
   width: 100%;
   display: flex;
