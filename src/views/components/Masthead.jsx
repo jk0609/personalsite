@@ -4,10 +4,10 @@ import StyledMastheadWrapper from '../styledComponents/StyledMastheadWrapper';
 
 export const Masthead = () => (
   <StyledMastheadWrapper>
-    <div className="masthead-links">
+    <div className="masthead">
+      <Link to="/">Home</Link>
       <Link to="/about">About Me</Link>
       <Link to="/portfolio">Portfolio</Link>
-      <Link to="/">Home</Link>
     </div>
   </StyledMastheadWrapper>
 );

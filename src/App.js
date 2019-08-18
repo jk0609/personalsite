@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
-import LandingPage from "./views/LandingPage";
+import LandingPage from './views/LandingPage';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>

@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export default styled.div`
+  .masthead {
+    height: 3em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   a {
-    float: right;
     margin: 0 10px;
     border-bottom: 1.5px solid transparent;
-    transition: border-color 0.5s linear;
+    transition: border-color 0.1s linear;
     font-size: 16px;
     text-decoration: none;
     color: #fff;

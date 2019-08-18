@@ -6,17 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Titillium Web', sans-serif;
     background-color: #2f2f2f;
     color: #fff;
-  }
-
-  #app {
-    height: 100%;
-    min-height: 100%;
-    min-width: 100%;
-
-    & > div {
-      height: 100%;
-      min-height: 100%;
-    }
+    margin: 0;
   }
 
   p,
