@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export function useInterval(callback, delay) {
   // Creates a mutable ref object that persists for the lifetime of a component that calls this hook

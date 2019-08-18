@@ -31,7 +31,7 @@
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
       "./node_modules/.bin/eslint --fix --config ./pre-commit.eslintrc.js .",
-      "git add"
+      "git add ."
     ]
   },
   "husky": {

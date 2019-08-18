@@ -4,9 +4,9 @@ module.exports = {
   // so while the pre-commit hook is running no-console will throw an
   // error and fail your commit in this case. Add any rules that you want to fail
   // a commit here.
-  extends: ["./.eslintrc.js"],
+  extends: ['./.eslintrc.js'],
   rules: {
-    "no-console": 2,
-    "no-debugger": 2
+    'no-console': 2,
+    'no-debugger': 2
   }
 };
