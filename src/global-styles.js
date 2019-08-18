@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  .content-body {
+    display: flex;
+    justify-content: center;
+  }
+
   p,
   label {
     font-family: 'Titillium Web', sans-serif;

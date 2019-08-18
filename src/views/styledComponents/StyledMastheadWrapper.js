@@ -12,7 +12,7 @@ export default styled.div`
     margin: 0 10px;
     border-bottom: 1.5px solid transparent;
     transition: border-color 0.1s linear;
-    font-size: 16px;
+    font-size: 1.1em;
     text-decoration: none;
     color: #fff;
 

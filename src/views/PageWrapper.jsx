@@ -12,7 +12,7 @@ const PageWrapper = props => (
   <>
     <Router>
       <Masthead />
-      <div>
+      <div className="content-body">
         <Route exact path="/" component={App} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/about" component={AboutMe} />
