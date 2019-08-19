@@ -2,9 +2,15 @@ import styled from 'styled-components';
 
 export default styled.div`
   text-align: center;
-  margin: 0 20%;
+  padding-bottom: 2em;
+  margin: 0 15%;
 
   .section-title {
-    color: red;
+    font-size: 2.5em;
+  }
+
+  div.text-section:nth-child(odd) {
+    background: #fff;
+    color: #2f2f2f;
   }
 `;
