@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 export default styled.div`
   .masthead {
-    height: 3em;
+    height: 6em;
+    padding-right: 4em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
   a {
-    margin: 0 10px;
+    margin: 1em;
     border-bottom: 1.5px solid transparent;
     transition: border-color 0.1s linear;
-    font-size: 1.1em;
+    font-size: 1.3em;
     text-decoration: none;
     color: #fff;
 

@@ -5,6 +5,14 @@ export default styled.div`
   padding-bottom: 2em;
   margin: 0 15%;
 
+  .typewriter-header {
+    font-size: 6em;
+  }
+
+  .typewriter-cursor {
+    color: #fff;
+  }
+
   .section-title {
     font-size: 2.5em;
   }

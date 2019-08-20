@@ -7,6 +7,7 @@ export default styled.div`
   div {
     width: calc(67% - 40px);
     padding: 20px;
+    font-size: 1.3em;
 
     h3,
     p {

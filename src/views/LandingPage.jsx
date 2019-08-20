@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Typewriter from 'react-typing-animation';
 
-import TextCarousel from './components/TextCarousel';
+let strings = ['test1', 'test2', 'test3'];
 
-export const LandingPage = props => (
+export const LandingPage = () => (
   <div>
-    <TextCarousel
-      className={'landing-page-carousel'}
-      rotatedText={['test', 'test2', 'test3']}
-      delay={2000}
-    />
+    <h1>Hi, I'm Jon.</h1>
+    <Typewriter loop={true} cursorClassName="typewriter-cursor">
+      {strings.map((text, i) => (
+        <Fragment key={i}>
+          <span className="typewriter-header">{text}</span>
+          <Typewriter.Backspace delay={2000} count={text.length + 1} />
+        </Fragment>
+      ))}
+    </Typewriter>
   </div>
 );
 
