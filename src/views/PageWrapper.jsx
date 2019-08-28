@@ -6,7 +6,7 @@ import StyledContentWrapper from './styledComponents/StyledContentWrapper';
 
 import Masthead from './components/Masthead';
 import Contact from './components/Contact';
-import App from '../App';
+import LandingPage from '../views/LandingPage';
 import AboutMe from '../views/AboutMe';
 import Learning from '../views/Learning';
 
@@ -15,7 +15,7 @@ const PageWrapper = props => (
     <Router>
       <Masthead />
       <StyledContentWrapper>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/learning" component={Learning} />
         <Route path="/about" component={AboutMe} />
       </StyledContentWrapper>

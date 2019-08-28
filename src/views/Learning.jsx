@@ -2,7 +2,7 @@ import React from 'react';
 
 const Learning = () => (
   <div>
-    <h1>Learning</h1>
+    <h2 className="section-title">Learning</h2>
   </div>
 );
 

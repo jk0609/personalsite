@@ -4,6 +4,7 @@ import PageWrapper from './views/PageWrapper.jsx';
 
 // Import CSS reset and Global Styles
 import GlobalStyle from './global-styles';
+import './fonts.css';
 
 ReactDOM.render(
   <>

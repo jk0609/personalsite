@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "animejs": "^3.0.1",
+    "babel-eslint": "^10.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -29,7 +29,7 @@
     "not op_mini all"
   ],
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "src/**/*.{js,jsx,json}": [
       "prettier --single-quote --write",
       "./node_modules/.bin/eslint --fix --config ./pre-commit.eslintrc.js .",
       "git add ."
