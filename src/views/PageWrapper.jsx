@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import StyledContentWrapper from './styledComponents/StyledContentWrapper';
 
 import Masthead from './components/Masthead';
-import Footer from './components/Footer';
+import Contact from './components/Contact';
 import App from '../App';
 import AboutMe from '../views/AboutMe';
 import Learning from '../views/Learning';
@@ -20,7 +20,7 @@ const PageWrapper = props => (
         <Route path="/about" component={AboutMe} />
       </StyledContentWrapper>
       {React.Children.toArray(props.children)}
-      <Footer />
+      <Contact />
     </Router>
   </>
 );

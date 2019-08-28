@@ -14,7 +14,7 @@ export default styled.div`
   }
 
   .typewriter-cursor {
-    color: grey;
+    color: #fff;
     font-weight: bold;
   }
 
