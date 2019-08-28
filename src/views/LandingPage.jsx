@@ -1,20 +1,35 @@
 import React, { Fragment } from 'react';
 import Typewriter from 'react-typing-animation';
 
-let strings = ['test1', 'test2', 'test3'];
+import StyledLandingPageWrapper from './styledComponents/StyledLandingPageWrapper';
+
+let typedText = [
+  'web developer',
+  'Javascript fan',
+  'tech enthusiast',
+  'tabletop gamer',
+  'pretty ok guy'
+];
 
 export const LandingPage = () => (
-  <div>
+  <StyledLandingPageWrapper>
     <h1>Hi, I'm Jon.</h1>
-    <Typewriter loop={true} cursorClassName="typewriter-cursor">
-      {strings.map((text, i) => (
+    <h1 className="typewriter-prefix">I'm a </h1>
+    <Typewriter
+      className="typewriter"
+      loop={true}
+      cursorClassName="typewriter-cursor"
+      speed={20}
+    >
+      {typedText.map((text, i) => (
         <Fragment key={i}>
-          <span className="typewriter-header">{text}</span>
-          <Typewriter.Backspace delay={2000} count={text.length + 1} />
+          <span className="typewriter-header">{text}.</span>
+          <Typewriter.Backspace delay={1500} count={text.length + 4} />
         </Fragment>
       ))}
     </Typewriter>
-  </div>
+    <h1>Let's build something</h1>
+  </StyledLandingPageWrapper>
 );
 
 export default LandingPage;
