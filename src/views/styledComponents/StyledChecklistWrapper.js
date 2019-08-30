@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  background: red;
+  display: inline-block;
+  width: 50%;
 
-  div {
-    visibility: hidden;
-  }
-  .open {
-    visibility: visible;
+  .checkbox-input-label {
+    display: block;
+    font-size: 1.5em;
   }
 `;
