@@ -8,30 +8,10 @@ let loremIpsum =
 const AboutMe = () => (
   <>
     <h2 className="section-title">About Me</h2>
-    <TextSection
-      sectionTitle="text-section-title"
-      // sectionText='text-section-text'
-      // TODO: DEV ONLY
-      sectionText={loremIpsum}
-    />
-    <TextSection
-      sectionTitle="text-section-title"
-      // sectionText='text-section-text'
-      // TODO: DEV ONLY
-      sectionText={loremIpsum}
-    />
-    <TextSection
-      sectionTitle="text-section-title"
-      // sectionText='text-section-text'
-      // TODO: DEV ONLY
-      sectionText={loremIpsum}
-    />
-    <TextSection
-      sectionTitle="text-section-title"
-      // sectionText='text-section-text'
-      // TODO: DEV ONLY
-      sectionText={loremIpsum}
-    />
+    <TextSection sectionTitle="text-section-title" sectionText={loremIpsum} />
+    <TextSection sectionTitle="text-section-title" sectionText={loremIpsum} />
+    <TextSection sectionTitle="text-section-title" sectionText={loremIpsum} />
+    <TextSection sectionTitle="text-section-title" sectionText={loremIpsum} />
   </>
 );
 

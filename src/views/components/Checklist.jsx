@@ -1,5 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Checklist = () => <h1>Checklist</h1>;
+import Checkbox from './Checkbox';
+import StyledChecklistWrapper from '../styledComponents/StyledChecklistWrapper';
+
+const Checklist = ({ items }) => {
+  const [open, toggleOpen] = useState(true);
+
+  return (
+    <StyledChecklistWrapper>
+      <h2 onClick={() => toggleOpen(!open)}>Checklist Title</h2>
+      <div className={open ? 'open' : ''}>
+        <Checkbox
+          isChecked={true}
+          label="test"
+          isDisabled={false}
+          name="test"
+        />
+      </div>
+    </StyledChecklistWrapper>
+  );
+};
 
 export default Checklist;
