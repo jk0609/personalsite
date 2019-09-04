@@ -9,6 +9,7 @@ export const Masthead = () => (
       <Link to="/">Home</Link>
       <Link to="/about">About Me</Link>
       <Link to="/learning">Learning in Public</Link>
+      <Link to="/Portfolio">Portfolio</Link>
     </div>
   </StyledMastheadWrapper>
 );

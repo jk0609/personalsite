@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import LandingPage from '../views/LandingPage';
 import AboutMe from '../views/AboutMe';
 import Learning from '../views/Learning';
+import Portfolio from '../views/Portfolio';
 
 const PageWrapper = props => (
   <>
@@ -16,8 +17,9 @@ const PageWrapper = props => (
       <Masthead />
       <StyledContentWrapper>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/learning" component={Learning} />
         <Route path="/about" component={AboutMe} />
+        <Route path="/learning" component={Learning} />
+        <Route path="/portfolio" component={Portfolio} />
       </StyledContentWrapper>
       {React.Children.toArray(props.children)}
       <Contact />
