@@ -11,14 +11,8 @@ export default styled.div`
 
   a {
     margin: 1em;
-    border-bottom: 1.5px solid transparent;
-    transition: border-color 0.1s linear;
-    font-size: 1.3em;
-    text-decoration: none;
-    color: #fff;
 
     :hover {
-      cursor: pointer;
       border-color: #fff;
     }
   }

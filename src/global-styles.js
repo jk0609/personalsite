@@ -7,8 +7,16 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  .hidden {
-    visibility: hidden;
+  a {
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.1s linear;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #fff;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 

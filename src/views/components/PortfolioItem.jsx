@@ -16,16 +16,16 @@ const PortfolioItem = ({ title, description }) => {
           src={require('../../sharedResources/assets/placeholder.png')}
           alt="alt text"
         />
-        <div className="portfolio-item-links">
-          <button>Github</button>
+        <div className={`portfolio-item-links ${isHovered ? '' : 'hidden'}`}>
+          <a>Source Code</a>
+          <a>Live Site</a>
         </div>
-        {/* live site and github buttons */}
         {/* stack icons */}
-        <p className="portfolio-item-stack">JS | Node | MySQL</p>
       </div>
       <div className="portfolio-item-description">
+        <p className="portfolio-item-stack">JS | Node | MySQL</p>
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p className="portfolio-item-text">{description}</p>
       </div>
     </StyledPortfolioItemWrapper>
   );
