@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import githubIcon from '../../sharedResources/assets/github-icon.png';
-import linkedinIcon from '../../sharedResources/assets/linkedin-icon.png';
-import emailIcon from '../../sharedResources/assets/email-icon.png';
 
 export default styled.div`
   display: flex;
@@ -9,9 +6,37 @@ export default styled.div`
   position: fixed;
   top: 30%;
   left: 0;
-  padding: 0 10px;
+  padding: 0 20px 0 5px;
   background: #436174;
   border-radius: 0 10px 10px 0;
+
+  &.closed {
+    transform: translate(-80%);
+    transition: transform 400ms;
+  }
+
+  &.open {
+    transform: translate(0);
+    transition: transform 400ms;
+  }
+
+  .arrow-container {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%) translateX(-100%);
+    height: 15px;
+    width: 15px;
+    fill: #fff;
+  }
+
+  .close-arrow {
+    transform: rotate(90deg);
+  }
+
+  .open-arrow {
+    transform: rotate(-90deg);
+  }
 
   span {
     height: 30px;
@@ -19,21 +44,10 @@ export default styled.div`
     display: block;
     background-size: contain;
     margin: 10px 0;
+    fill: #fff;
 
     :hover {
-      // TODO: Add hover treatment
+      fill: #a9a9a9;
     }
-  }
-
-  .github-icon {
-    background-image: url(${githubIcon});
-  }
-
-  .linkedin-icon {
-    background-image: url(${linkedinIcon});
-  }
-
-  .email-icon {
-    background-image: url(${emailIcon});
   }
 `;
