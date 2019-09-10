@@ -43,7 +43,7 @@ export default styled.div`
         background: #fff;
         padding: 12px 5px;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 1em;
         letter-spacing: 2px;
         width: 40%;

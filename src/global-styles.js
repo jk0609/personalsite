@@ -18,6 +18,33 @@ export const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
   }
+
+  // Transition Styles
+  .slide {
+    position: absolute;
+  }
+
+  .slide-enter {
+    opacity: 0;
+    transform: scale(1.1) translate3d(100%, 0, 0);
+  }
+
+  .slide-enter.slide-enter-active {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    transition: opacity 400ms, transform 400ms;
+  }
+
+  .slide-exit {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  .slide-exit.slide-exit-active {
+    opacity: 0;
+    transform: scale(0.9) translate3d(-100%, 0, 0);
+    transition: opacity 400ms, transform 400ms;
+  }
 `;
 
 export default GlobalStyle;

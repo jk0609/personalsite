@@ -11,21 +11,42 @@ import AboutMe from '../views/AboutMe';
 import Learning from '../views/Learning';
 import Portfolio from '../views/Portfolio';
 
-const PageWrapper = props => (
-  <>
-    <Router>
-      <Masthead />
-      <StyledContentWrapper>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/about" component={AboutMe} />
-        <Route path="/learning" component={Learning} />
-        <Route path="/portfolio" component={Portfolio} />
-      </StyledContentWrapper>
-      {React.Children.toArray(props.children)}
-      <Contact />
-    </Router>
-  </>
-);
+import { CSSTransition } from 'react-transition-group';
+
+export const PageWrapper = props => {
+  const routes = [
+    { path: '/', name: 'LandingPage', Component: LandingPage },
+    { path: '/about', name: 'AboutMe', Component: AboutMe },
+    { path: '/learning', name: 'Learning', Component: Learning },
+    { path: '/portfolio', name: 'Portfolio', Component: Portfolio }
+  ];
+
+  return (
+    <>
+      <Router>
+        <Masthead />
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={500}
+                classNames={'slide'}
+                unmountOnExit
+              >
+                <StyledContentWrapper className="slide">
+                  <Component />
+                </StyledContentWrapper>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
+        {React.Children.toArray(props.children)}
+        <Contact />
+      </Router>
+    </>
+  );
+};
 
 PageWrapper.propTypes = {
   // TODO: Get this in the right shape
