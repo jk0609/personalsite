@@ -4,7 +4,7 @@ export default styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 30%;
+  top: 25vh;
   left: 0;
   padding: 0 20px 0 5px;
   background: #436174;

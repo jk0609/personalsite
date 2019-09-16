@@ -4,6 +4,7 @@ export default styled.div`
   text-align: center;
   padding-bottom: 2em;
   margin: 0 15%;
+  width: 70%;
 
   h1 {
     font-size: 4em;
