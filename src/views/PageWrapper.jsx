@@ -7,8 +7,7 @@ import StyledContentWrapper from './styledComponents/StyledContentWrapper';
 import Masthead from './components/Masthead';
 import Contact from './components/Contact';
 import LandingPage from '../views/LandingPage';
-import AboutMe from '../views/AboutMe';
-import Learning from '../views/Learning';
+import About from '../views/About';
 import Portfolio from '../views/Portfolio';
 
 import { CSSTransition } from 'react-transition-group';
@@ -16,8 +15,7 @@ import { CSSTransition } from 'react-transition-group';
 export const PageWrapper = props => {
   const routes = [
     { path: '/', name: 'LandingPage', Component: LandingPage },
-    { path: '/about', name: 'AboutMe', Component: AboutMe },
-    { path: '/learning', name: 'Learning', Component: Learning },
+    { path: '/about', name: 'About', Component: About },
     { path: '/portfolio', name: 'Portfolio', Component: Portfolio }
   ];
 

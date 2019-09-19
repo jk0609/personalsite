@@ -38,7 +38,7 @@ export default styled.div`
     transform: rotate(-90deg);
   }
 
-  span {
+  > svg {
     height: 30px;
     width: 30px;
     display: block;

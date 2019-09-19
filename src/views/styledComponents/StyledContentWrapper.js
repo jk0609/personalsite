@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export default styled.div`
   text-align: center;
   padding-bottom: 2em;
-  margin: 0 15%;
-  width: 70%;
+  margin: 0 20%;
+  width: 60%;
 
   h1 {
     font-size: 4em;

@@ -10,24 +10,16 @@ export const Contact = () => {
   const [isOpen, toggleOpen] = useState(true);
 
   return (
-    <StyledContactWrapper
-      className={isOpen ? 'open' : 'closed'}
-      onClick={() => {
-        toggleOpen(!isOpen);
-      }}
-    >
+    <StyledContactWrapper className={isOpen ? 'open' : 'closed'}>
       <div className="arrow-container">
-        <ArrowIcon className={isOpen ? 'close-arrow' : 'open-arrow'} />
+        <ArrowIcon
+          className={isOpen ? 'close-arrow' : 'open-arrow'}
+          onClick={() => toggleOpen(!isOpen)}
+        />
       </div>
-      <span>
-        <GithubIcon />
-      </span>
-      <span>
-        <LinkedinIcon />
-      </span>
-      <span>
-        <GmailIcon />
-      </span>
+      <GithubIcon alt="Github" />
+      <LinkedinIcon />
+      <GmailIcon />
     </StyledContactWrapper>
   );
 };
