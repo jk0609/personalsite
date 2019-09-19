@@ -1,4 +1,5 @@
 import React from 'react';
+import StyledAboutWrapper from './styledComponents/StyledAboutWrapper';
 import TextSection from './components/TextSection';
 
 // TODO: DEV ONLY
@@ -10,7 +11,7 @@ let aboutText = {
 };
 
 const About = () => (
-  <>
+  <StyledAboutWrapper>
     <h2 className="section-title">About</h2>
     <div className="text-sections">
       <TextSection
@@ -19,7 +20,7 @@ const About = () => (
       />
       <TextSection sectionTitle="What's he enjoy?" sectionText={loremIpsum} />
     </div>
-  </>
+  </StyledAboutWrapper>
 );
 
 export default About;

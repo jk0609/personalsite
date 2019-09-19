@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import StyledContactWrapper from '../styledComponents/StyledContactWrapper';
 
-import { ReactComponent as GithubIcon } from '../../sharedResources/assets/github.svg';
-import { ReactComponent as LinkedinIcon } from '../../sharedResources/assets/linkedin.svg';
-import { ReactComponent as GmailIcon } from '../../sharedResources/assets/gmail.svg';
-import { ReactComponent as ArrowIcon } from '../../sharedResources/assets/arrow.svg';
+import { ReactComponent as Github } from '../../sharedResources/assets/github.svg';
+import { ReactComponent as LinkedIn } from '../../sharedResources/assets/linkedin.svg';
+import { ReactComponent as Gmail } from '../../sharedResources/assets/gmail.svg';
+import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg';
+import { ReactComponent as Resume } from '../../sharedResources/assets/cv.svg';
 
 export const Contact = () => {
   const [isOpen, toggleOpen] = useState(true);
@@ -12,14 +13,15 @@ export const Contact = () => {
   return (
     <StyledContactWrapper className={isOpen ? 'open' : 'closed'}>
       <div className="arrow-container">
-        <ArrowIcon
+        <Arrow
           className={isOpen ? 'close-arrow' : 'open-arrow'}
           onClick={() => toggleOpen(!isOpen)}
         />
       </div>
-      <GithubIcon alt="Github" />
-      <LinkedinIcon />
-      <GmailIcon />
+      <Github />
+      <LinkedIn />
+      <Gmail />
+      <Resume />
     </StyledContactWrapper>
   );
 };
