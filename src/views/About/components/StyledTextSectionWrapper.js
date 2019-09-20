@@ -3,12 +3,11 @@ import styled from 'styled-components';
 export default styled.div`
   text-align: left;
   display: flex;
+  align-items: center;
   border-radius: 5px;
 
   div.title {
     padding: 10px;
-    display: flex;
-    align-items: center;
     width: 33%;
 
     h3 {

@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import StyledContentWrapper from './styledComponents/StyledContentWrapper';
+import StyledContentWrapper from './components/styledComponents/StyledContentWrapper';
 
 import Masthead from './components/Masthead';
 import Contact from './components/Contact';
-import LandingPage from '../views/LandingPage';
-import About from '../views/About';
-import Portfolio from '../views/Portfolio';
+import LandingPage from '../LandingPage/LandingPage';
+import About from '../About/About';
+import Portfolio from '../Portfolio/Portfolio';
 
 import { CSSTransition } from 'react-transition-group';
 

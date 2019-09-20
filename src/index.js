@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PageWrapper from './views/PageWrapper.jsx';
+import PageWrapper from './views/PageWrapper/PageWrapper.jsx';
 
 // Import CSS reset and Global Styles
 import GlobalStyle from './global-styles';

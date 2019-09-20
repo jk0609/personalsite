@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StyledMastheadWrapper from '../styledComponents/StyledMastheadWrapper';
+import StyledMastheadWrapper from './styledComponents/StyledMastheadWrapper';
 
 export const Masthead = () => (
   <StyledMastheadWrapper>

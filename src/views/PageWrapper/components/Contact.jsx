@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import StyledContactWrapper from '../styledComponents/StyledContactWrapper';
+import StyledContactWrapper from './styledComponents/StyledContactWrapper';
 
-import { ReactComponent as Github } from '../../sharedResources/assets/github.svg';
-import { ReactComponent as LinkedIn } from '../../sharedResources/assets/linkedin.svg';
-import { ReactComponent as Gmail } from '../../sharedResources/assets/gmail.svg';
-import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg';
-import { ReactComponent as Resume } from '../../sharedResources/assets/cv.svg';
+import { ReactComponent as Github } from '../../../sharedResources/assets/github.svg';
+import { ReactComponent as LinkedIn } from '../../../sharedResources/assets/linkedin.svg';
+import { ReactComponent as Gmail } from '../../../sharedResources/assets/gmail.svg';
+import { ReactComponent as Arrow } from '../../../sharedResources/assets/arrow.svg';
+import { ReactComponent as Resume } from '../../../sharedResources/assets/cv.svg';
 
 export const Contact = () => {
   const [isOpen, toggleOpen] = useState(true);

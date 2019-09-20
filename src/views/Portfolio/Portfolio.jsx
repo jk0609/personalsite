@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StyledPortfolioWrapper from './styledComponents/StyledPortfolioWrapper';
+import StyledPortfolioWrapper from './StyledPortfolioWrapper';
 import PortfolioItem from './components/PortfolioItem';
 
 // Dev only

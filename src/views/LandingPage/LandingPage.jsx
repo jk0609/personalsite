@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import Typewriter from 'react-typing-animation';
 
-import StyledLandingPageWrapper from './styledComponents/StyledLandingPageWrapper';
+import StyledLandingPageWrapper from './StyledLandingPageWrapper';
 
 const typedText = [
   'web developer',

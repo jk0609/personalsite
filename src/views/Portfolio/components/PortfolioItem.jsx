@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import StyledPortfolioItemWrapper from '../styledComponents/StyledPortfolioItemWrapper';
+import StyledPortfolioItemWrapper from './styledComponents/StyledPortfolioItemWrapper';
 
 const PortfolioItem = ({ title, description }) => {
   const [isHovered, toggleHovered] = useState(false);
@@ -13,7 +13,7 @@ const PortfolioItem = ({ title, description }) => {
     >
       <div className="portfolio-item-image">
         <img
-          src={require('../../sharedResources/assets/placeholder.png')}
+          src={require('../../../sharedResources/assets/placeholder.png')}
           alt="alt text"
         />
         <div className={`portfolio-item-links ${isHovered ? '' : 'hidden'}`}>
