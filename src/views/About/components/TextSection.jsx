@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledTextSectionWrapper from './StyledTextSectionWrapper';
+import StyledTextSectionWrapper from './styledComponents/StyledTextSectionWrapper';
 
 export const TextSection = ({ sectionTitle, sectionText }) => (
   <StyledTextSectionWrapper>

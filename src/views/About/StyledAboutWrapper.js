@@ -17,12 +17,24 @@ export default styled.div`
 
   .skills {
     width: 40%;
-    overflow-x: hidden;
-    white-space: nowrap;
+    position: relative;
 
-    .skills-box {
-      height: 100px;
+    .transition {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .proficient {
+      background: red;
+    }
+
+    .learning {
       background: green;
+    }
+
+    .will-learn {
+      background: blue;
     }
   }
 `;
