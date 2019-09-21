@@ -4,7 +4,6 @@ import posed, { PoseGroup } from 'react-pose';
 import StyledAboutWrapper from './StyledAboutWrapper';
 import TextSection from './components/TextSection';
 import Skills from './components/Skills';
-import { tween } from 'popmotion';
 
 // TODO: DEV ONLY
 let loremIpsum =

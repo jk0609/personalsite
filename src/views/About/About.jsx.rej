@@ -1,0 +1,35 @@
+diff a/src/views/About/About.jsx b/src/views/About/About.jsx	(rejected hunks)
+@@ -4,4 +4,4 @@ import posed, { PoseGroup } from "react-pose";
+-import StyledAboutWrapper from "./StyledAboutWrapper";
+-import TextSection from "./components/TextSection";
+-import Skills from "./components/Skills";
+-import { tween } from "popmotion";
++import StyledAboutWrapper from './StyledAboutWrapper';
++import TextSection from './components/TextSection';
++import Skills from './components/Skills';
++import { tween } from 'popmotion';
+@@ -11 +11 @@ let loremIpsum =
+-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
++  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+@@ -20 +20 @@ const Transition = posed.div({
+-    x: "100",
++    x: '100',
+@@ -23 +23 @@ const Transition = posed.div({
+-      ease: "easeInOut",
++      ease: 'easeInOut',
+@@ -29 +29 @@ const Transition = posed.div({
+-    x: "100%",
++    x: '100%',
+@@ -32 +32 @@ const Transition = posed.div({
+-      ease: "easeInOut",
++      ease: 'easeInOut',
+@@ -40,3 +40,3 @@ const About = () => {
+-    { className: "proficient" },
+-    { className: "learning" },
+-    { className: "will-learn" }
++    { className: 'proficient' },
++    { className: 'learning' },
++    { className: 'will-learn' }
+@@ -56 +56 @@ const About = () => {
+-      <div className={"skills"}>
++      <div className={'skills'}>
