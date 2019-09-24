@@ -4,6 +4,9 @@ import posed, { PoseGroup } from 'react-pose';
 import StyledAboutWrapper from './StyledAboutWrapper';
 import TextSection from './components/TextSection';
 import Skills from './components/Skills';
+import PaginationDots from './components/PaginationDots';
+import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg';
+import { skillsConfig } from './skillsConfig';
 
 // TODO: DEV ONLY
 let loremIpsum =
@@ -13,34 +16,28 @@ let aboutText = {
     "I'm a web developer specializing in React and Javascript. I enjoy building quality web applications that solves my clients' problems, and luckily I'm pretty good at it. Seattle, WA is where I spend my time and I'm always available if someone needs interesting work done well."
 };
 
-const Transition = posed.div({
-  enter: {
-    // TODO: how to enter right and enter left
-    x: '100',
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 300
-    }
-  },
-  exit: {
-    // 100% exits right, -100% exits left
-    x: '100%',
-    opacity: 0,
-    transition: {
-      ease: 'easeInOut',
-      duration: 300
-    }
-  }
-});
-
 const About = () => {
-  const skillsViews = [
-    { className: 'proficient' },
-    { className: 'learning' },
-    { className: 'will-learn' }
-  ];
+  const [transitionX, changeTransitionX] = useState('100%');
   const [skillsIndex, changeSkillsIndex] = useState(0);
+
+  const Transition = posed.div({
+    enter: {
+      x: '0',
+      opacity: 1,
+      transition: {
+        ease: 'easeInOut',
+        duration: 500
+      }
+    },
+    exit: {
+      x: transitionX,
+      opacity: 0,
+      transition: {
+        ease: 'easeInOut',
+        duration: 500
+      }
+    }
+  });
 
   return (
     <StyledAboutWrapper>
@@ -50,26 +47,38 @@ const About = () => {
           sectionTitle="Who's this guy?"
           sectionText={aboutText.firstSection}
         />
+        {/* TODO: write copy */}
         <TextSection sectionTitle="What's he enjoy?" sectionText={loremIpsum} />
       </div>
-      <div className={'skills'}>
-        <button
-          onClick={() =>
-            changeSkillsIndex(skillsIndex > 0 ? skillsIndex - 1 : skillsIndex)
-          }
-        >
-          Prev
-        </button>
-        <button
-          onClick={() =>
-            changeSkillsIndex(skillsIndex < 2 ? skillsIndex + 1 : skillsIndex)
-          }
-        >
-          Next
-        </button>
+      <div className="skills">
+        <div className="skills-header">
+          <Arrow
+            className="prev-arrow"
+            onClick={() => {
+              changeSkillsIndex(
+                skillsIndex > 0 ? skillsIndex - 1 : skillsIndex
+              );
+              changeTransitionX('-100%');
+            }}
+          />
+          <div>
+            <span>{skillsConfig[skillsIndex].name}</span>
+            <PaginationDots length={skillsConfig.length} active={skillsIndex} />
+          </div>
+          <Arrow
+            className="next-arrow"
+            onClick={() => {
+              changeSkillsIndex(
+                skillsIndex < 2 ? skillsIndex + 1 : skillsIndex
+              );
+              changeTransitionX('100%');
+            }}
+          />
+        </div>
         <PoseGroup>
           <Transition className="transition" key={skillsIndex}>
-            <Skills {...skillsViews[skillsIndex]} />
+            {/* TODO: title section, title w/ prev/next buttons */}
+            <Skills skills={[{ name: 'skills one', percentage: 20 }]} />
           </Transition>
         </PoseGroup>
       </div>

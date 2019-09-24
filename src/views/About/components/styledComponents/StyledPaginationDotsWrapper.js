@@ -1,0 +1,9 @@
+import styled from 'styled-components';
+
+export default styled.div`
+  margin-top: 15px;
+
+  .active > * {
+    fill: #436174;
+  }
+`;
