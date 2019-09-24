@@ -77,8 +77,7 @@ const About = () => {
         </div>
         <PoseGroup>
           <Transition className="transition" key={skillsIndex}>
-            {/* TODO: title section, title w/ prev/next buttons */}
-            <Skills skills={[{ name: 'skills one', percentage: 20 }]} />
+            <Skills skills={skillsConfig[skillsIndex].skills} />
           </Transition>
         </PoseGroup>
       </div>

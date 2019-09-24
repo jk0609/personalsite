@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import StyledContactWrapper from './styledComponents/StyledContactWrapper';
+import ResumePdf from '../../../sharedResources/JonKangResume.pdf';
 
 import { ReactComponent as Github } from '../../../sharedResources/assets/github.svg';
 import { ReactComponent as LinkedIn } from '../../../sharedResources/assets/linkedin.svg';
@@ -9,6 +10,10 @@ import { ReactComponent as Resume } from '../../../sharedResources/assets/cv.svg
 
 export const Contact = () => {
   const [isOpen, toggleOpen] = useState(true);
+
+  const resumeClickHandler = () => {
+    window.open(ResumePdf);
+  };
 
   return (
     <StyledContactWrapper className={isOpen ? 'open' : 'closed'}>
@@ -21,7 +26,7 @@ export const Contact = () => {
       <Github />
       <LinkedIn />
       <Gmail />
-      <Resume />
+      <Resume onClick={resumeClickHandler} />
     </StyledContactWrapper>
   );
 };

@@ -1,17 +1,30 @@
 export const skillsConfig = [
   {
-    name: 'Professional',
+    name: 'Know It',
     className: 'professional',
-    skills: []
+    skills: [
+      {
+        name: 'Javascript',
+        percentage: 85
+      },
+      {
+        name: 'React',
+        percentage: 85
+      },
+      {
+        name: 'Git',
+        percentage: 75
+      }
+    ]
   },
   {
-    name: 'Learning',
+    name: 'Working On It',
     className: 'learning',
     skills: []
   },
   {
-    name: 'Want to Learn',
+    name: 'Gonna Learn It',
     className: 'will-learn',
-    skils: []
+    skills: []
   }
 ];

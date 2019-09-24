@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 
 export default styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h2 {
+    width: 100%;
+  }
+
   > div {
     display: inline-block;
     vertical-align: top;
   }
 
   .text-sections {
-    width: 60%;
+    width: 55%;
+    padding-top: 40px;
 
     > div:nth-child(odd) {
       background: #fff;
@@ -17,7 +27,7 @@ export default styled.div`
 
   .skills {
     width: calc(40% - 20px);
-    padding: 10px;
+    padding: 0 10px;
     position: relative;
 
     .transition {
@@ -43,6 +53,10 @@ export default styled.div`
           transform: rotate(-90deg);
         }
       }
+    }
+
+    .skill-item {
+      text-align: left;
     }
   }
 `;

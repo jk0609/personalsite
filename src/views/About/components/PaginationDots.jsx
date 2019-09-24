@@ -16,14 +16,7 @@ export const PaginationDots = props => {
     );
   }
 
-  return (
-    <StyledPaginationDotsWrapper>
-      {/* <svg height="10" width="10">
-        <circle cx="5" cy="5" r="4" stroke="black" stroke-width=".5" fill="red" />
-      </svg> */}
-      {pageDots}
-    </StyledPaginationDotsWrapper>
-  );
+  return <StyledPaginationDotsWrapper>{pageDots}</StyledPaginationDotsWrapper>;
 };
 
 export default PaginationDots;
