@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import StyledContentWrapper from './components/styledComponents/StyledContentWrapper';
 
@@ -10,41 +10,36 @@ import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Portfolio from '../Portfolio/Portfolio';
 
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-export const PageWrapper = props => {
-  const routes = [
-    { path: '/', name: 'LandingPage', Component: LandingPage },
-    { path: '/about', name: 'About', Component: About },
-    { path: '/portfolio', name: 'Portfolio', Component: Portfolio }
-  ];
-
-  return (
-    <>
-      <Router>
-        <Masthead />
-        {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match != null}
-                timeout={500}
-                classNames={'slide'}
-                unmountOnExit
-              >
-                <StyledContentWrapper className="slide">
-                  <Component />
-                </StyledContentWrapper>
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
-        {React.Children.toArray(props.children)}
-        <Contact />
-      </Router>
-    </>
-  );
-};
+export const PageWrapper = props => (
+  <Router>
+    <Masthead />
+    <Route
+      render={({ location }) => (
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            classNames="slide"
+            timeout={{ enter: 800, exit: 400 }}
+            mountOnEnter={false}
+            unmountOnExit={true}
+          >
+            <StyledContentWrapper className="slide">
+              <Switch location={location}>
+                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/portfolio" component={Portfolio} />
+              </Switch>
+            </StyledContentWrapper>
+          </CSSTransition>
+        </TransitionGroup>
+      )}
+    />
+    {React.Children.toArray(props.children)}
+    <Contact />
+  </Router>
+);
 
 PageWrapper.propTypes = {
   // TODO: Get this in the right shape

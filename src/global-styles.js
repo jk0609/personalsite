@@ -25,25 +25,24 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .slide-enter {
-    opacity: 0;
-    transform: scale(1.1) translate3d(100%, 0, 0);
+    z-index: 10;
+    transform: translate3d(100%, 0, 0);
   }
 
   .slide-enter.slide-enter-active {
-    opacity: 1;
-    transform: scale(1) translate3d(0, 0, 0);
-    transition: opacity 400ms, transform 400ms;
+    transform: translate3d(0, 0, 0);
+    transition: transform 800ms;
   }
 
   .slide-exit {
-    opacity: 1;
-    transform: scale(1) translate3d(0, 0, 0);
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   .slide-exit.slide-exit-active {
+    transform: translate3d(-100%, 0, 0);
     opacity: 0;
-    transform: scale(0.9) translate3d(-100%, 0, 0);
-    transition: opacity 400ms, transform 400ms;
+    transition: opacity 800ms, transform 800ms;
   }
 `;
 
