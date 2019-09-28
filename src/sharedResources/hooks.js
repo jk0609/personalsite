@@ -21,3 +21,11 @@ export function useInterval(callback, delay) {
     }
   }, [delay]);
 }
+
+export function usePrevious(val) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = val;
+  });
+  return ref.current;
+}

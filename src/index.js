@@ -3,6 +3,7 @@ import 'react-app-polyfill/stable';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import PageWrapper from './views/PageWrapper/PageWrapper.jsx';
 
 // Import CSS reset and Global Styles
@@ -12,7 +13,9 @@ import './fonts.css';
 ReactDOM.render(
   <>
     <GlobalStyle />
-    <PageWrapper />
+    <Router>
+      <PageWrapper />
+    </Router>
   </>,
   document.getElementById('root')
 );

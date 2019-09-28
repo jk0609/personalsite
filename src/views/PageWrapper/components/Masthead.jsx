@@ -8,7 +8,7 @@ export const Masthead = () => (
       {/* TODO: Replace with left side icon/logo */}
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
-      <Link to="/Portfolio">Portfolio</Link>
+      <Link to="/portfolio">Portfolio</Link>
     </div>
   </StyledMastheadWrapper>
 );
