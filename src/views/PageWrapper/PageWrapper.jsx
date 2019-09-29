@@ -28,7 +28,7 @@ export const PageWrapper = props => {
     paths[prevPath] > paths[currentPath]
       ? changeDirection('right')
       : changeDirection('left');
-  }, [props.location.pathname, paths, prevPath]);
+  }, [paths, prevPath, props.location.pathname]);
 
   return (
     <>

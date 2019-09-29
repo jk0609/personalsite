@@ -20,11 +20,15 @@ export const skillsConfig = [
   {
     name: 'Working On It',
     className: 'learning',
-    skills: []
-  },
-  {
-    name: 'Gonna Learn It',
-    className: 'will-learn',
-    skills: []
+    skills: [
+      {
+        name: 'Express',
+        percentage: 60
+      },
+      {
+        name: 'MongoDB',
+        percentage: 50
+      }
+    ]
   }
 ];

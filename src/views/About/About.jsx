@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import posed, { PoseGroup } from 'react-pose';
 
 import StyledAboutWrapper from './StyledAboutWrapper';
@@ -9,15 +9,13 @@ import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg'
 import { skillsConfig } from './skillsConfig';
 
 // TODO: DEV ONLY
-let loremIpsum =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 let aboutText = {
   firstSection:
     "I'm a web developer specializing in React and Javascript. I enjoy building quality web applications that solves my clients' problems, and luckily I'm pretty good at it. Seattle, WA is where I spend my time and I'm always available if someone needs interesting work done well."
 };
 
 const About = () => {
-  const [transitionX, changeTransitionX] = useState('100%');
+  const [transitionX, changeTransitionX] = useState('-100%');
   const [skillsIndex, changeSkillsIndex] = useState(0);
 
   const Transition = posed.div({
@@ -42,24 +40,23 @@ const About = () => {
   return (
     <StyledAboutWrapper>
       <h2 className="section-title">About</h2>
+      {/* Headshot */}
       <div className="text-sections">
         <TextSection
           sectionTitle="Who's this guy?"
           sectionText={aboutText.firstSection}
         />
-        {/* TODO: write copy */}
-        <TextSection sectionTitle="What's he enjoy?" sectionText={loremIpsum} />
       </div>
       <div className="skills">
         <div className="skills-header">
+          {/* TODO: Should be button with arrow background */}
           <Arrow
             className="prev-arrow"
             onClick={() => {
-              changeSkillsIndex(
-                skillsIndex > 0 ? skillsIndex - 1 : skillsIndex
-              );
+              changeSkillsIndex(skillsIndex - 1);
               changeTransitionX('-100%');
             }}
+            // disabled={skillsIndex === 0}
           />
           <div>
             <span>{skillsConfig[skillsIndex].name}</span>
@@ -68,11 +65,10 @@ const About = () => {
           <Arrow
             className="next-arrow"
             onClick={() => {
-              changeSkillsIndex(
-                skillsIndex < 2 ? skillsIndex + 1 : skillsIndex
-              );
+              changeSkillsIndex(skillsIndex + 1);
               changeTransitionX('100%');
             }}
+            // disabled={skillsIndex === 1}
           />
         </div>
         <PoseGroup>

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-eslint": "^10.0.3",
     "braces": "^3.0.2",
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",

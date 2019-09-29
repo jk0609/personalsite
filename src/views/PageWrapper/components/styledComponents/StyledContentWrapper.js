@@ -46,7 +46,6 @@ export default styled.div`
 
   // prop is briefly right then changes to left
   .slide-exit.slide-exit-active {
-    background: ${props => (props.direction === 'left' ? 'red' : 'blue')};
     transform: translate3d(
       ${props => (props.direction === 'left' ? '-100%' : '100%')},
       0,
