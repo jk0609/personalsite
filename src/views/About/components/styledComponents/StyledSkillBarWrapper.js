@@ -14,5 +14,12 @@ export default styled.div`
     border-radius: 3px 0 0 3px;
     width: ${props => props.percentage}%;
     transition: width 0.2 ease-in;
+    text-align: right;
+
+    .percentage-label {
+      margin-right: 10px;
+      color: #2f2f2f;
+      font-weight: bold;
+    }
   }
 `;

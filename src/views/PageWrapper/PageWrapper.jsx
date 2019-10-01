@@ -63,7 +63,8 @@ export const PageWrapper = props => {
 
 PageWrapper.propTypes = {
   // TODO: Get this in the right shape
-  children: PropTypes.array
+  children: PropTypes.array,
+  location: PropTypes.object
 };
 
 export default withRouter(PageWrapper);

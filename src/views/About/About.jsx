@@ -49,27 +49,30 @@ const About = () => {
       </div>
       <div className="skills">
         <div className="skills-header">
-          {/* TODO: Should be button with arrow background */}
-          <Arrow
+          <button
             className="prev-arrow"
             onClick={() => {
               changeSkillsIndex(skillsIndex - 1);
               changeTransitionX('-100%');
             }}
-            // disabled={skillsIndex === 0}
-          />
+            disabled={skillsIndex === 0}
+          >
+            <Arrow />
+          </button>
           <div>
             <span>{skillsConfig[skillsIndex].name}</span>
             <PaginationDots length={skillsConfig.length} active={skillsIndex} />
           </div>
-          <Arrow
+          <button
             className="next-arrow"
             onClick={() => {
               changeSkillsIndex(skillsIndex + 1);
               changeTransitionX('100%');
             }}
-            // disabled={skillsIndex === 1}
-          />
+            disabled={skillsIndex === 2}
+          >
+            <Arrow />
+          </button>
         </div>
         <PoseGroup>
           <Transition className="transition" key={skillsIndex}>

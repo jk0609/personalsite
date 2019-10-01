@@ -41,15 +41,25 @@ export default styled.div`
       flex-direction: row;
       justify-content: space-between;
 
-      > svg {
+      > button {
         height: 25px;
-        fill: #fff;
+        background: none;
+        border: none;
 
-        &.prev-arrow {
+        > svg {
+          height: 25px;
+          fill: #fff;
+        }
+
+        &:disabled > svg {
+          fill: #d3d3d3;
+        }
+
+        &.prev-arrow > svg {
           transform: rotate(90deg);
         }
 
-        &.next-arrow {
+        &.next-arrow > svg {
           transform: rotate(-90deg);
         }
       }
