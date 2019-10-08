@@ -7,6 +7,8 @@
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
     "mem": "^5.1.1",
+    "overlayscrollbars": "^1.9.1",
+    "overlayscrollbars-react": "^0.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pose": "^4.0.8",

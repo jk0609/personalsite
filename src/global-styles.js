@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
   }
+
+  .os-host {
+    height: calc(100vh - 6em);
+  }
 `;
 
 export default GlobalStyle;
