@@ -38,21 +38,30 @@ export const PageWrapper = props => {
       <OverlayScrollbar className="os-theme-light">
         <Route
           render={({ location }) => (
+            // https://blog.etch.team/react-page-transitions-make-your-website-feel-native-bf2804b011dc
+            // CSSTransition rerenders and triggers animations only when the key changes, aka location.pathname.
             <StyledContentWrapper direction={direction}>
               <TransitionGroup>
                 <CSSTransition
-                  key={location.key}
+                  key={location.pathname}
                   classNames="slide"
                   timeout={{ enter: 800, exit: 400 }}
-                  mountOnEnter={false}
-                  unmountOnExit={true}
                 >
                   <div className="slide">
-                    <Switch location={location}>
-                      <Route exact path="/" component={LandingPage} />
-                      <Route exact path="/about" component={About} />
-                      <Route exact path="/portfolio" component={Portfolio} />
-                    </Switch>
+                    <Route
+                      location={location}
+                      render={() => (
+                        <Switch>
+                          <Route exact path="/" component={LandingPage} />
+                          <Route exact path="/about" component={About} />
+                          <Route
+                            exact
+                            path="/portfolio"
+                            component={Portfolio}
+                          />
+                        </Switch>
+                      )}
+                    />
                   </div>
                 </CSSTransition>
               </TransitionGroup>
