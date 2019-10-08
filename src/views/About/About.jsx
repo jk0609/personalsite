@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import posed, { PoseGroup } from 'react-pose';
 
 import StyledAboutWrapper from './StyledAboutWrapper';
@@ -40,8 +40,12 @@ const About = () => {
   return (
     <StyledAboutWrapper>
       <h2 className="section-title">About</h2>
-      {/* Headshot */}
       <div className="text-sections">
+        <div className="head-shot">
+          <img
+            src={require('../../sharedResources/assets/placeholder.png')}
+          ></img>
+        </div>
         <TextSection
           sectionTitle="Who's this guy?"
           sectionText={aboutText.firstSection}

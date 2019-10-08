@@ -19,10 +19,21 @@ export default styled.div`
     width: 55%;
     padding-top: 40px;
 
-    > div:nth-child(odd) {
+    > div:nth-child(even) {
       background: #fff;
       color: #2f2f2f;
     }
+  }
+
+  .head-shot {
+    img {
+      // TODO: remove magic #s
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    padding-bottom: 30px;
   }
 
   .skills {

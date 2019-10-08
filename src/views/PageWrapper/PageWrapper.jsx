@@ -28,7 +28,7 @@ export const PageWrapper = props => {
     paths[prevPath] > paths[currentPath]
       ? changeDirection('right')
       : changeDirection('left');
-  }, [paths, prevPath, props.location.pathname]);
+  }, [props.location.pathname]); // eslint-disable-line
 
   return (
     <>

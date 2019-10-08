@@ -34,18 +34,6 @@ export const skillsConfig = [
       {
         name: 'SQL Databases (PostgreSQL, MySQL)',
         percentage: 70
-      },
-      {
-        name: 'AngularJS',
-        percentage: 60
-      },
-      {
-        name: 'Ruby/Ruby on Rails',
-        percentage: 60
-      },
-      {
-        name: 'Python',
-        percentage: 50
       }
     ]
   },
