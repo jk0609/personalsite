@@ -1,44 +1,18 @@
 import React, { useState } from 'react';
-import posed, { PoseGroup } from 'react-pose';
-
+import Slider from '../../sharedResources/components/Slider';
 import StyledAboutWrapper from './StyledAboutWrapper';
 import TextSection from './components/TextSection';
 import Skills from './components/Skills';
 import PaginationDots from './components/PaginationDots';
 import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg';
-import { skillsConfig } from './skillsConfig';
-
-// TODO: DEV ONLY
-let aboutText = {
-  firstSection:
-    "I'm a web developer specializing in React and Javascript. I enjoy building quality web applications that solves my clients' problems, and luckily I'm pretty good at it. Seattle, WA is where I spend my time and I'm always available if someone needs interesting work done well."
-};
+import { skillsConfig, aboutText } from './aboutConfig';
 
 const About = () => {
-  const [transitionX, changeTransitionX] = useState('-100%');
+  const [direction, changeDirection] = useState('left');
   const [skillsIndex, changeSkillsIndex] = useState(0);
 
-  const Transition = posed.div({
-    enter: {
-      x: '0',
-      opacity: 1,
-      transition: {
-        ease: 'easeInOut',
-        duration: 500
-      }
-    },
-    exit: {
-      x: transitionX,
-      opacity: 0,
-      transition: {
-        ease: 'easeInOut',
-        duration: 500
-      }
-    }
-  });
-
   return (
-    <StyledAboutWrapper>
+    <StyledAboutWrapper direction={direction}>
       <h2 className="section-title">About</h2>
       <div className="text-sections">
         <div className="head-shot">
@@ -46,10 +20,7 @@ const About = () => {
             src={require('../../sharedResources/assets/placeholder.png')}
           ></img>
         </div>
-        <TextSection
-          sectionTitle="Who's this guy?"
-          sectionText={aboutText.firstSection}
-        />
+        <TextSection sectionTitle="Who's this guy?" sectionText={aboutText} />
       </div>
       <div className="skills">
         <div className="skills-header">
@@ -57,32 +28,32 @@ const About = () => {
             className="prev-arrow"
             onClick={() => {
               changeSkillsIndex(skillsIndex - 1);
-              changeTransitionX('-100%');
+              changeDirection('right');
             }}
             disabled={skillsIndex === 0}
           >
             <Arrow />
           </button>
           <div>
-            <span>{skillsConfig[skillsIndex].name}</span>
+            <Slider transitionOn={skillsIndex} direction={direction}>
+              <span>{skillsConfig[skillsIndex].name}</span>
+            </Slider>
             <PaginationDots length={skillsConfig.length} active={skillsIndex} />
           </div>
           <button
             className="next-arrow"
             onClick={() => {
               changeSkillsIndex(skillsIndex + 1);
-              changeTransitionX('100%');
+              changeDirection('left');
             }}
             disabled={skillsIndex === 2}
           >
             <Arrow />
           </button>
         </div>
-        <PoseGroup>
-          <Transition className="transition" key={skillsIndex}>
-            <Skills skills={skillsConfig[skillsIndex].skills} />
-          </Transition>
-        </PoseGroup>
+        <Slider transitionOn={skillsIndex} direction={direction}>
+          <Skills skills={skillsConfig[skillsIndex].skills} />
+        </Slider>
       </div>
     </StyledAboutWrapper>
   );

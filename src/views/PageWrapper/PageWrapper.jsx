@@ -12,8 +12,7 @@ import Contact from './components/Contact';
 import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Portfolio from '../Portfolio/Portfolio';
-
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Slider from '../../sharedResources/components/Slider';
 
 export const PageWrapper = props => {
   let paths = {
@@ -41,30 +40,18 @@ export const PageWrapper = props => {
             // https://blog.etch.team/react-page-transitions-make-your-website-feel-native-bf2804b011dc
             // CSSTransition rerenders and triggers animations only when the key changes, aka location.pathname.
             <StyledContentWrapper direction={direction}>
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.pathname}
-                  classNames="slide"
-                  timeout={{ enter: 800, exit: 400 }}
-                >
-                  <div className="slide">
-                    <Route
-                      location={location}
-                      render={() => (
-                        <Switch>
-                          <Route exact path="/" component={LandingPage} />
-                          <Route exact path="/about" component={About} />
-                          <Route
-                            exact
-                            path="/portfolio"
-                            component={Portfolio}
-                          />
-                        </Switch>
-                      )}
-                    />
-                  </div>
-                </CSSTransition>
-              </TransitionGroup>
+              <Slider transitionOn={location.pathname} direction={direction}>
+                <Route
+                  location={location}
+                  render={() => (
+                    <Switch>
+                      <Route exact path="/" component={LandingPage} />
+                      <Route exact path="/about" component={About} />
+                      <Route exact path="/portfolio" component={Portfolio} />
+                    </Switch>
+                  )}
+                />
+              </Slider>
             </StyledContentWrapper>
           )}
         />

@@ -24,7 +24,7 @@ export const skillsConfig = [
         percentage: 85
       },
       {
-        name: 'State management (Redux)',
+        name: 'Redux',
         percentage: 80
       },
       {
@@ -82,3 +82,6 @@ export const skillsConfig = [
     ]
   }
 ];
+
+export const aboutText =
+  "I'm a web developer specializing in React and Javascript. I enjoy building quality web applications that solves my clients' problems, and luckily I'm pretty good at it. Seattle, WA is where I spend my time and I'm always available if someone has interesting work that they need done well.";
