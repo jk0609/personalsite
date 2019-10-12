@@ -34,7 +34,15 @@ export const PageWrapper = props => {
   return (
     <>
       <Masthead />
-      <OverlayScrollbar className="os-theme-light">
+      <OverlayScrollbar
+        options={{
+          className: 'os-theme-light',
+          overflowBehavior: {
+            x: 'hidden',
+            y: 'scroll'
+          }
+        }}
+      >
         <Route
           render={({ location }) => (
             // https://blog.etch.team/react-page-transitions-make-your-website-feel-native-bf2804b011dc

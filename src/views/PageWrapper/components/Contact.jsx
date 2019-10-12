@@ -9,19 +9,20 @@ import { ReactComponent as Arrow } from '../../../sharedResources/assets/arrow.s
 import { ReactComponent as Resume } from '../../../sharedResources/assets/cv.svg';
 
 export const Contact = () => {
-  const [isOpen, toggleOpen] = useState(true);
+  const [isOpen, toggleOpen] = useState(false);
 
   const resumeClickHandler = () => {
     window.open(ResumePdf);
   };
 
   return (
-    <StyledContactWrapper className={isOpen ? 'open' : 'closed'}>
+    <StyledContactWrapper
+      className={isOpen ? 'open' : 'closed'}
+      onMouseEnter={() => toggleOpen(true)}
+      onMouseLeave={() => toggleOpen(false)}
+    >
       <div className="arrow-container">
-        <Arrow
-          className={isOpen ? 'close-arrow' : 'open-arrow'}
-          onClick={() => toggleOpen(!isOpen)}
-        />
+        <Arrow className={isOpen ? 'close-arrow' : 'open-arrow'} />
       </div>
       <Github />
       <LinkedIn />

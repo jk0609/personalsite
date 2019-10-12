@@ -11,8 +11,8 @@ export default styled.div`
   border-radius: 0 10px 10px 0;
 
   &.closed {
-    transform: translate(-80%);
-    transition: transform 400ms;
+    transform: translate(-70%);
+    transition: transform 500ms;
   }
 
   &.open {
