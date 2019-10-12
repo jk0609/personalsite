@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from '../../sharedResources/components/Slider';
 import StyledAboutWrapper from './StyledAboutWrapper';
 import TextSection from './components/TextSection';
@@ -8,11 +8,16 @@ import { ReactComponent as Arrow } from '../../sharedResources/assets/arrow.svg'
 import { skillsConfig, aboutText } from './aboutConfig';
 
 const About = () => {
+  // TODO: incorporate usePrev to remember last state of skills menu
   const [direction, changeDirection] = useState('left');
   const [skillsIndex, changeSkillsIndex] = useState(0);
 
+  // useEffect(() => {
+  //   console.log(direction);
+  // }, [direction])
+
   return (
-    <StyledAboutWrapper direction={direction}>
+    <StyledAboutWrapper>
       <h2 className="section-title">About</h2>
       <div className="text-sections">
         <div className="head-shot">
@@ -46,7 +51,7 @@ const About = () => {
               changeSkillsIndex(skillsIndex + 1);
               changeDirection('left');
             }}
-            disabled={skillsIndex === 2}
+            disabled={skillsIndex === skillsConfig.length - 1}
           >
             <Arrow />
           </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import SkillBar from './SkillBar';
 
 export const Skills = props => (
-  <div className={`skill-item ${props.className}`}>
+  <div className="skill-item">
     {props.skills.map((skill, i) => (
       <React.Fragment key={i}>
         <span>{skill.name}</span>

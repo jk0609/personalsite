@@ -4,7 +4,10 @@ export default styled.div`
   // Transition Styles
   .slide {
     position: absolute;
-    width: 60%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .slide-enter {

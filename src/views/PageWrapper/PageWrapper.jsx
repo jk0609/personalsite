@@ -39,8 +39,12 @@ export const PageWrapper = props => {
           render={({ location }) => (
             // https://blog.etch.team/react-page-transitions-make-your-website-feel-native-bf2804b011dc
             // CSSTransition rerenders and triggers animations only when the key changes, aka location.pathname.
-            <StyledContentWrapper direction={direction}>
-              <Slider transitionOn={location.pathname} direction={direction}>
+            <StyledContentWrapper>
+              <Slider
+                transitionOn={location.pathname}
+                direction={direction}
+                width="60%"
+              >
                 <Route
                   location={location}
                   render={() => (

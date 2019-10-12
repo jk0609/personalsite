@@ -56,6 +56,7 @@ export default styled.div`
         height: 25px;
         background: none;
         border: none;
+        z-index: 10;
 
         > svg {
           height: 25px;

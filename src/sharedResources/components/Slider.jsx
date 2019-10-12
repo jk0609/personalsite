@@ -11,7 +11,12 @@ const SliderContainer = props => (
         classNames="slide"
         timeout={{ enter: 800, exit: 400 }}
       >
-        <div className="slide">{props.children}</div>
+        <div
+          className="slide"
+          style={{ width: props.width ? props.width : '100%' }}
+        >
+          {props.children}
+        </div>
       </CSSTransition>
     </TransitionGroup>
   </StyledSliderWrapper>
@@ -19,7 +24,8 @@ const SliderContainer = props => (
 
 SliderContainer.propTypes = {
   transitionOn: PropTypes.any,
-  direction: PropTypes.string
+  direction: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default SliderContainer;
