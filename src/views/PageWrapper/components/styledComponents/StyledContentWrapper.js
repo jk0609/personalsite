@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export default styled.div`
   text-align: center;
-  padding-bottom: 2em;
 
   h1 {
     font-size: 4em;

@@ -8,10 +8,10 @@ export default styled.div`
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 2em;
   }
 
   .slide-enter {
-    z-index: 10;
     transform: translate3d(
       ${props => (props.direction === 'left' ? '100%' : '-100%')},
       0,
@@ -25,7 +25,6 @@ export default styled.div`
   }
 
   .slide-exit {
-    z-index: 1;
     transform: translate3d(0, 0, 0);
   }
 

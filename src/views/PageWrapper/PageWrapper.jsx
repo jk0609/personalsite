@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { usePrevious } from '../../sharedResources/hooks';
+import { throttle } from 'lodash';
 import { OverlayScrollbarsComponent as OverlayScrollbar } from 'overlayscrollbars-react';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 import StyledContentWrapper from './components/styledComponents/StyledContentWrapper';
+import { usePrevious } from '../../sharedResources/hooks';
+import Slider from '../../sharedResources/components/Slider';
 
 import Masthead from './components/Masthead';
 import Contact from './components/Contact';
 import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Portfolio from '../Portfolio/Portfolio';
-import Slider from '../../sharedResources/components/Slider';
 
 export const PageWrapper = props => {
   let paths = {
@@ -23,7 +24,10 @@ export const PageWrapper = props => {
 
   const prevPath = usePrevious(props.location.pathname);
   const [direction, changeDirection] = useState('left');
+  const [isScrolled, updateScroll] = useState(false);
+  const osRef = React.createRef();
 
+  // Update slide animation direction
   useEffect(() => {
     let currentPath = props.location.pathname;
     paths[prevPath] > paths[currentPath]
@@ -33,13 +37,19 @@ export const PageWrapper = props => {
 
   return (
     <>
-      <Masthead />
+      <Masthead isScrolled={isScrolled} />
       <OverlayScrollbar
+        ref={osRef}
         options={{
           className: 'os-theme-light',
           overflowBehavior: {
             x: 'hidden',
             y: 'scroll'
+          },
+          callbacks: {
+            onScroll: throttle(() => {
+              updateScroll(osRef.current.osInstance().scroll().ratio.y !== 0);
+            }, 300)
           }
         }}
       >
